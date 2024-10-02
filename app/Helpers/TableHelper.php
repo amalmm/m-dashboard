@@ -33,7 +33,7 @@ class TableHelper
     // Method to generate the HTML for the table
     public function generate()
     {
-        $html = '<table id="' . $this->tableId . '" class="w-full border-collapse border border-gray-300  ">';
+        $html = '<table id="' . $this->tableId . '" class="w-full border-collapse border   border-gray-300  ">';
         $html .= $this->generateHeader();
         $html .= $this->generateBody();
         $html .= '</table>';
