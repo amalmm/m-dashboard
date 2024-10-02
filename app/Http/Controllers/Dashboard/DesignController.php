@@ -39,7 +39,7 @@ class DesignController extends Controller
                 $user->id,
                 $user->name,
                 $user->email,
-                '<a href="' .  $user->id  . '" class="text-blue-600 hover:text-blue-800">Edit</a>'
+                '<a href="' .  $user->id  . '" class="text-blue-600 hover:text-blue-800">Edit</a> '
 
             ]);
         }

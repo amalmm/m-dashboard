@@ -22,7 +22,7 @@ class DemoController extends Controller
 
     private function tableData () {
 
-        $users = Demo::paginate(10);
+        $users = Demo::paginate(15);
 
         // Create a new instance of TableHelper
         $table = new TableHelper();
@@ -41,7 +41,7 @@ class DemoController extends Controller
                 $user->id,
                 $user->name,
                 $user->email,
-                '<a href="' .  $user->id  . '" class="text-blue-600 hover:text-blue-800">Edit</a>'
+                '<a href="' .  $user->id  . '" class=" text-blue-500 text-sm">Edit</a> <a href="' .  $user->id  . '" class="text-yellow-500 text-sm">Delte</a>'
 
             ]);
         }
