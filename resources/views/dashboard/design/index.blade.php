@@ -67,7 +67,7 @@
             </div>
 
              {{-- card --}}
-             <div class="   ">
+             <div class="overflow-hidden">
                 <h3 class="text-md font-semibold mb-2">Table</h3>
                 <div class="  rounded-md text-md bg-white">
                     <table class="min-w-full border-collapse   ">
@@ -98,7 +98,7 @@
                     </table>
                 </div>
             </div>
-            <div>
+            <div class="overflow-hidden">
                 <!-- Render the generated table HTML -->
                 <h3 class="text-md font-semibold mb-2">Table</h3>
                 {!! $tableHtml !!}

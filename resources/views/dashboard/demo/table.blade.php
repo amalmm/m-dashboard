@@ -4,7 +4,7 @@
      </x-slot>
 
      <x-slot name="body" >
-        <div>
+        <div class="overflow-hidden">
             <!-- Render the generated table HTML -->
             <h3 class="text-md font-semibold mb-2">Table</h3>
             {!! $tableHtml !!}

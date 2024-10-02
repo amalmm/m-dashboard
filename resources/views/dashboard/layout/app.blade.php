@@ -20,7 +20,7 @@
                 <!-- Page Content -->
                 <main class="mx-auto max-w-screen-lg w-full space-y-6 p-5 text-gray-800">
                     <div class="  ">
-                        <h2 class="font-bold text-xl   dark:text-gray-200   py-5">
+                        <h2 class="font-bold text-3xl   dark:text-gray-200   py-5">
                             {{ $header ?? 'header missing' }}
                         </h2>
                     </div>
