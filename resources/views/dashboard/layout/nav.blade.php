@@ -5,7 +5,7 @@
 
 
         {{-- profile --}}
-        <a href="{{ route('dashboard.home.index') }}" >
+        <a href="{{route('profile.edit')}}" >
         <div class="mt-3 flex gap-2 items-center hover:bg-gray-100 " >
            <div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-16">
