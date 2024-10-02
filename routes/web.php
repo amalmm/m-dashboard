@@ -33,4 +33,18 @@ require __DIR__.'/auth.php';
 
 Route::prefix('dashboard')->name('dashboard.')->group( function () {
     Route::get('/home', [App\Http\Controllers\Dashboard\HomeController::class, 'index'])->name('home.index');
+
+    Route::prefix('demo')->name('demo.')->group( function () {
+        Route::get('/', [App\Http\Controllers\Dashboard\DemoController::class, 'index'])->name('index');
+        Route::get('/table', [App\Http\Controllers\Dashboard\DemoController::class, 'table'])->name('table');
+        Route::post('/store', [App\Http\Controllers\Dashboard\DemoController::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [App\Http\Controllers\Dashboard\DemoController::class, 'edit'])->name('edit');
+        Route::get('/create', [App\Http\Controllers\Dashboard\DemoController::class, 'create'])->name('create');
+    });
+
+    Route::prefix('design')->name('design.')->group( function () {
+        Route::get('/design', [App\Http\Controllers\Dashboard\DesignController::class, 'index'])->name('index');
+    });
+
+
 });
