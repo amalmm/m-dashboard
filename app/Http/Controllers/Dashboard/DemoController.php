@@ -22,7 +22,7 @@ class DemoController extends Controller
 
     private function tableData () {
 
-        $users = Demo::paginate(15);
+        $data = Demo::orderBy('id','desc')->paginate(15);
 
         // Create a new instance of TableHelper
         $table = new TableHelper();
@@ -32,22 +32,23 @@ class DemoController extends Controller
              'ID',
              'Name',
              'Email',
-             'Action'
+             'Edit',
+             'Delete'
             ]);
 
         // Add rows to the table from the paginated users
-        foreach ($users as $user) {
+        foreach ($data as $post) {
             $table->addRow([
-                $user->id,
-                $user->name,
-                $user->email,
-                '<a href="' .  $user->id  . '" class=" text-blue-500 text-sm">Edit</a> <a href="' .  $user->id  . '" class="text-yellow-500 text-sm">Delte</a>'
-
+                $post->id,
+                $post->name,
+                $post->email,
+                $table->getEditButton( route('dashboard.demo.edit', ["id" => $post->id]) ),
+                $table->getDeleteButton( route('dashboard.demo.destroy', ["id" => $post->id]) )
             ]);
         }
 
         // Set pagination
-        $table->setPagination($users);
+        $table->setPagination($data);
 
         // Generate the HTML for the table
         $tableHtml = $table->generate();
@@ -76,6 +77,9 @@ class DemoController extends Controller
             'name'=>'required',
             'email'=>'required',
         ]);
+
+        Demo::create($validate);
+        return redirect()->back();
     }
 
     /**
@@ -91,7 +95,9 @@ class DemoController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.demo.edit');
+        $data = Demo::findOrFail($id);
+        return view('dashboard.demo.edit')
+        ->with('data',$data);
 
     }
 
@@ -108,6 +114,8 @@ class DemoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Demo::findOrFail($id);
+        $data->delete();
+        return redirect()->route('dashboard.demo.table');
     }
 }

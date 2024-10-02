@@ -35,6 +35,8 @@
             </div>
           </div>
 
+          <x-dashboard-all-data-card route="{{route('dashboard.demo.table')}}" title="View All Data" />
+
           {{-- card --}}
           <x-dashboard-form-card action="" method="post" >
             <h3 class="text-md font-semibold mb-2">create new data</h3>
@@ -103,6 +105,5 @@
                 <h3 class="text-md font-semibold mb-2">Table</h3>
                 {!! $tableHtml !!}
             </div>
-            <div class="h-[500px] w-10 bg-red-400"></div>
-     </x-slot>
+      </x-slot>
 </x-dashboard-layout>

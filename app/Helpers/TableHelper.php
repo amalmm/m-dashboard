@@ -62,7 +62,7 @@ class TableHelper
     {
         $html = '<tbody>';
         foreach ($this->rows as $row) {
-            $html .= '<tr class="bg-white hover:bg-gray-100">';
+            $html .= '<tr class="bg-white hover:bg-gray-100 text-sm">';
             foreach ($row as $cell) {
                 // If the cell contains HTML (like a button or a link), don't escape it
                 if (is_string($cell) && $this->isHtml($cell)) {
@@ -89,5 +89,24 @@ class TableHelper
     protected function isHtml($string)
     {
         return $string !== strip_tags($string);
+    }
+
+    // Method to generate the Edit button
+    public function getEditButton($route)
+    {
+        return '<a href="' . $route . '" class="text-blue-500 text-xs">Edit</a>';
+    }
+
+    // Method to generate the Delete button with confirmation
+    public function getDeleteButton( $route)
+    {
+        return '
+             <form action="' .  $route . '" method="POST" class="delete-form"   style="display:inline;"
+             onsubmit="return confirm(\'Are you sure you want to delete this item?\');" >
+                ' . csrf_field() . '
+                ' . method_field('DELETE') . '
+                <button type="submit" class="delete-btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded text-xs">Delete</button>
+            </form>
+        ';
     }
 }

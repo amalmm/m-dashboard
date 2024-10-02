@@ -5,7 +5,7 @@
 
      <x-slot name="body" >
              <x-dashboard-add-new-card route="{{route('dashboard.demo.create')}}" />
-             <x-dashboard-list-card route="{{route('dashboard.demo.table')}}" title="View All Data" />
+             <x-dashboard-all-data-card route="{{route('dashboard.demo.table')}}" title="View All Data" />
 
        </x-slot>
 </x-dashboard-layout>
