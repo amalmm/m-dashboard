@@ -1,4 +1,4 @@
-<div class="w-[300px] fixed top-0 bottom-0 lg:left-0 p-2 bg-black overflow-y-auto text-left text-gray-500  hidden lg:block  ">
+<div class="  w-[350px]       p-4 bg-black overflow-y-auto text-left text-gray-500  hidden lg:block  ">
     {{-- Logo --}}
     <div class="text-xl text-white p-2">{{ config('app.name', 'Laravel') }}</div>
 

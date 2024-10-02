@@ -14,11 +14,22 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-            @include('dashboard.layout.nav')
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-     </body>
+    <body class="font-sans antialiased ">
+        <div class="flex h-screen bg-gray-200">
+
+                 @include('dashboard.layout.nav')
+                <!-- Page Content -->
+                <main class="  bg-white w-full ">
+                       <!-- Page Heading -->
+                        @if (isset($header))
+                        <header class="bg-white dark:bg-gray-800 shadow p-5">
+                            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                                {{ $header }}
+                            </div>
+                        </header>
+                    @endif
+                     {{ $slot }}
+                </main>
+        </div>
+      </body>
 </html>
