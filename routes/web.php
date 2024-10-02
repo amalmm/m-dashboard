@@ -41,6 +41,7 @@ Route::prefix('dashboard')->name('dashboard.')->group( function () {
         Route::get('/{id}/edit', [App\Http\Controllers\Dashboard\DemoController::class, 'edit'])->name('edit');
         Route::delete('/{id}/destroy', [App\Http\Controllers\Dashboard\DemoController::class, 'destroy'])->name('destroy');
         Route::get('/create', [App\Http\Controllers\Dashboard\DemoController::class, 'create'])->name('create');
+        Route::put('/{id}/update', [App\Http\Controllers\Dashboard\DemoController::class, 'update'])->name('update');
     });
 
     Route::prefix('design')->name('design.')->group( function () {

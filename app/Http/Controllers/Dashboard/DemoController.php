@@ -79,7 +79,7 @@ class DemoController extends Controller
         ]);
 
         Demo::create($validate);
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Created');
     }
 
     /**
@@ -106,7 +106,15 @@ class DemoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+
+        $data = Demo::findOrFail($id);
+        $data->update($validate);
+
+        return redirect()->back()->with('success','Data Updated');
     }
 
     /**
@@ -116,6 +124,6 @@ class DemoController extends Controller
     {
         $data = Demo::findOrFail($id);
         $data->delete();
-        return redirect()->route('dashboard.demo.table');
+        return redirect()->route('dashboard.demo.table')->with('success','Data deleted ');
     }
 }

@@ -94,7 +94,7 @@ class TableHelper
     // Method to generate the Edit button
     public function getEditButton($route)
     {
-        return '<a href="' . $route . '" class="text-blue-500 text-xs">Edit</a>';
+        return '<a href="' . $route . '" class="p-2 bg-blue-500 text-xs">Edit</a>';
     }
 
     // Method to generate the Delete button with confirmation
@@ -105,7 +105,7 @@ class TableHelper
              onsubmit="return confirm(\'Are you sure you want to delete this item?\');" >
                 ' . csrf_field() . '
                 ' . method_field('DELETE') . '
-                <button type="submit" class="delete-btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded text-xs">Delete</button>
+                <button type="submit" class="  bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded text-xs">Delete</button>
             </form>
         ';
     }

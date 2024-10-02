@@ -21,7 +21,7 @@
         </div>
 
          {{-- alert --}}
-          <div class=" p-5 bg-yellow-200 border rounded-md text-sm ">
+          <div class=" p-5 bg-yellow-200   rounded-sm text-sm ">
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam velit cupiditate quisquam voluptatem! Qui nisi quae pariatur nam accusantium vitae veritatis exercitationem aliquam ullam, corrupti quibusdam dolorum vero dignissimos.
          </div>
          {{-- card --}}

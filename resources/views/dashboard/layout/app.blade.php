@@ -18,9 +18,10 @@
 
                  @include('dashboard.layout.nav')
                 <!-- Page Content -->
-                <main class="mx-auto max-w-screen-lg w-full space-y-6 p-5 text-gray-800">
+                <main class="mx-auto max-w-screen-lg w-full space-y-5 p-5 text-gray-800">
+                    <x-dashboard-alert  />
                     <div class="  ">
-                        <h2 class="font-bold text-3xl   dark:text-gray-200   py-5">
+                        <h2 class="font-bold text-3xl   dark:text-gray-200    ">
                             {{ $header ?? 'header missing' }}
                         </h2>
                     </div>

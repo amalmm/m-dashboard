@@ -28,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('dashboard.components.form-label', 'dashboard-form-label');
         Blade::component('dashboard.components.form-submit', 'dashboard-form-submit');
         Blade::component('dashboard.components.form-error', 'dashboard-form-error');
+        Blade::component('dashboard.components.alert', 'dashboard-alert');
     }
 }
