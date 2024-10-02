@@ -40,4 +40,4 @@ http://localhost:8000
 ```
  
 ## Screenshots:
-![frontend-homepage](https://github.com/amalmm/m-dashboard/screenshots/image1.png) 
+![dashboard](https://github.com/amalmm/m-dashboard/screenshots/image1.png) 
