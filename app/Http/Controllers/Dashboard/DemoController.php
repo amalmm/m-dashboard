@@ -42,7 +42,7 @@ class DemoController extends Controller
                 $post->id,
                 $post->name,
                 $post->email,
-                $table->getEditButton( route('dashboard.demo.edit', ["id" => $post->id]) ),
+                $table->getLinkButton( route('dashboard.demo.edit', ["id" => $post->id]) , 'Edit'),
                 $table->getDeleteButton( route('dashboard.demo.destroy', ["id" => $post->id]) )
             ]);
         }

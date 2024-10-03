@@ -91,10 +91,10 @@ class TableHelper
         return $string !== strip_tags($string);
     }
 
-    // Method to generate the Edit button
-    public function getEditButton($route)
+
+    public function getLinkButton($route,$name)
     {
-        return '<a href="' . $route . '" class="p-2 bg-blue-500 text-xs">Edit</a>';
+        return '<a href="' . $route . '" class="p-2 bg-blue-500 text-xs">'.$name.'</a>';
     }
 
     // Method to generate the Delete button with confirmation
