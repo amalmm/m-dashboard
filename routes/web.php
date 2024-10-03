@@ -32,21 +32,24 @@ require __DIR__.'/auth.php';
 
 
 Route::prefix('dashboard')->name('dashboard.')->group( function () {
-    Route::get('/home', [App\Http\Controllers\Dashboard\HomeController::class, 'index'])->name('home.index');
 
-    Route::prefix('demo')->name('demo.')->group( function () {
-        Route::get('/', [App\Http\Controllers\Dashboard\DemoController::class, 'index'])->name('index');
-        Route::get('/table', [App\Http\Controllers\Dashboard\DemoController::class, 'table'])->name('table');
-        Route::post('/store', [App\Http\Controllers\Dashboard\DemoController::class, 'store'])->name('store');
-        Route::get('/{id}/edit', [App\Http\Controllers\Dashboard\DemoController::class, 'edit'])->name('edit');
-        Route::delete('/{id}/destroy', [App\Http\Controllers\Dashboard\DemoController::class, 'destroy'])->name('destroy');
-        Route::get('/create', [App\Http\Controllers\Dashboard\DemoController::class, 'create'])->name('create');
-        Route::put('/{id}/update', [App\Http\Controllers\Dashboard\DemoController::class, 'update'])->name('update');
-    });
+    Route::get('/home', [App\Http\Controllers\Dashboard\HomeController::class, 'index'])->name('home.index');
 
     Route::prefix('design')->name('design.')->group( function () {
         Route::get('/design', [App\Http\Controllers\Dashboard\DesignController::class, 'index'])->name('index');
     });
+
+    Route::prefix('demo')->name('demo.')->controller(App\Http\Controllers\Dashboard\DemoController::class)->group( function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/table','table')->name('table');
+        Route::post('/store','store')->name('store');
+        Route::get('/{id}/edit','edit')->name('edit');
+        Route::delete('/{id}/destroy',  'destroy')->name('destroy');
+        Route::get('/create',  'create')->name('create');
+        Route::put('/{id}/update',  'update')->name('update');
+    });
+
+
 
 
 });
