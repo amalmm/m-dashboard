@@ -49,7 +49,7 @@ Route::prefix('dashboard')->name('dashboard.')->group( function () {
         Route::put('/{id}/update',  'update')->name('update');
     });
 
-
+    // require __DIR__.'/dashboard/blog.php';
 
 
 });

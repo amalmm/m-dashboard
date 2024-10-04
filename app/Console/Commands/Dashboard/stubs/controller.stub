@@ -1,0 +1,129 @@
+<?php
+
+namespace App\Http\Controllers\Dashboard;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Helpers\TableHelper;
+use App\Models\Dashboard\{{name}};
+
+class {{name}}Controller extends Controller
+{
+    public function index()
+    {
+        return view('dashboard.{{route}}.index');
+    }
+
+    public function table()
+    {
+        $tableHtml = $this->tableData();
+        return view('dashboard.{{route}}.table', compact('tableHtml'));
+    }
+
+    private function tableData () {
+
+        $data = {{name}}::orderBy('id','desc')->paginate(15);
+
+        // Create a new instance of TableHelper
+        $table = new TableHelper();
+
+        // Set the headers for the table
+        $table->setHeaders([
+             'ID',
+             'Name',
+             'Email',
+             'Edit',
+             'Delete'
+            ]);
+
+        // Add rows to the table from the paginated users
+        foreach ($data as $post) {
+            $table->addRow([
+                $post->id,
+                $post->name,
+                $post->email,
+                $table->getLinkButton( route('dashboard.{{route}}.edit', ["id" => $post->id]) , 'Edit'),
+                $table->getDeleteButton( route('dashboard.{{route}}.destroy', ["id" => $post->id]) )
+            ]);
+        }
+
+        // Set pagination
+        $table->setPagination($data);
+
+        // Generate the HTML for the table
+        $tableHtml = $table->generate();
+
+        return $tableHtml;
+    }
+
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('dashboard.{{route}}.create');
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+
+        {{name}}::create($validate);
+        return redirect()->back()->with('success','Data Created');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $data = {{name}}::findOrFail($id);
+        return view('dashboard.{{route}}.edit')
+        ->with('data',$data);
+
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+
+        $data = {{name}}::findOrFail($id);
+        $data->update($validate);
+
+        return redirect()->back()->with('success','Data Updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $data = {{name}}::findOrFail($id);
+        $data->delete();
+        return redirect()->route('dashboard.{{route}}.table')->with('success','Data deleted ');
+    }
+}

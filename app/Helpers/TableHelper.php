@@ -60,7 +60,12 @@ class TableHelper
     // Method to generate the body HTML
     protected function generateBody()
     {
+
+
         $html = '<tbody>';
+        if (count($this->rows) < 1) {
+            $html .=   '<tr class="bg-white hover:bg-gray-100 text-sm text-center"> <td>no data found in db </td></tr>';
+        }
         foreach ($this->rows as $row) {
             $html .= '<tr class="bg-white hover:bg-gray-100 text-sm">';
             foreach ($row as $cell) {

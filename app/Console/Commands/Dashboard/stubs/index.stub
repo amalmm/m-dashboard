@@ -1,1 +1,11 @@
-{{name}}
+<x-dashboard-layout>
+    <x-slot name="header">
+           {{name}}
+     </x-slot>
+
+     <x-slot name="body" >
+             <x-dashboard-add-new-card route="{{route('dashboard.{{route}}.create')}}" />
+             <x-dashboard-all-data-card route="{{route('dashboard.{{route}}.table')}}" title="View All Data" />
+
+       </x-slot>
+</x-dashboard-layout>
