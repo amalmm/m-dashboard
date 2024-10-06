@@ -18,8 +18,9 @@ run
  http://localhost:8000/dashboard/{name}
 ```
 
+list  crud command
 ```sh
- php artisan crud   - to view all command 
+ php artisan crud    
 ```
 
 
