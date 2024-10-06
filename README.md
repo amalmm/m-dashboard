@@ -7,7 +7,7 @@
  php artisan crud:crud {name}
   ```
 1.  generate crud application 
-2.  include route file to main route 
+2.  include route file to web.php route 
 
 ```sh
   require __DIR__.'/dashboard/blog.php';
