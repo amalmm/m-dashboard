@@ -10,7 +10,7 @@ class MakeView extends Command
 
     protected $signature = 'crud:view {name}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud views';
 
     // key :stub  value:generated file name
     protected $file =   [

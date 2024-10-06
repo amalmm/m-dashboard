@@ -11,7 +11,7 @@ class MakeCrud extends Command
 
     protected $signature = 'crud:crud {name}  {-m} {-r}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud  {-m} migration {-r} route';
 
     public function handle()
     {

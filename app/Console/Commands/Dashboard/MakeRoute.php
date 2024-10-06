@@ -11,7 +11,7 @@ class MakeRoute extends Command
 
     protected $signature = 'crud:route {name}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud route file';
 
     protected $stubPath =   __DIR__ . '/stubs/route.stub';
 

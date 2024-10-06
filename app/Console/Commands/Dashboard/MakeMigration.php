@@ -12,7 +12,7 @@ class MakeMigration extends Command
 
     protected $signature = 'crud:migration {name}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud migration';
 
     protected $stubPath =   __DIR__ . '/stubs/migration.stub';
 

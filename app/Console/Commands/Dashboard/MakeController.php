@@ -10,7 +10,7 @@ class MakeController extends Command
 
     protected $signature = 'crud:controller {name}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud controller';
 
     protected $stubPath =   __DIR__ . '/stubs/controller.stub';
 

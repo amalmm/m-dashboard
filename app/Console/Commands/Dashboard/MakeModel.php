@@ -11,7 +11,7 @@ class MakeModel extends Command
 
     protected $signature = 'crud:model {name}';
 
-    protected $description = 'generate dashboard crud application';
+    protected $description = 'generate dashboard crud model';
 
     protected $stubPath =   __DIR__ . '/stubs/model.stub';
 

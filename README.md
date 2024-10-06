@@ -1,9 +1,30 @@
 # m-dashboard
  
  This project is a simple laravel admin with crud application 
- 
 
-### Requirements
+ ### Usage
+ ```sh
+ php artisan crud:crud {name}
+  ```
+1.  generate crud application 
+2.  include route file to main route 
+
+```sh
+  require __DIR__.'/dashboard/blog.php';
+```
+
+run 
+```sh
+ http://localhost:8000/dashboard/{name}
+```
+
+```sh
+ php artisan crud   - to view all command 
+```
+
+
+
+#### Requirements
 
 ```sh
 Laravel >= 10.10
@@ -11,7 +32,7 @@ PHP >= 8.1
 ```
 
 
-### Installation
+#### Installation
 
 Install the dependencies and devDependencies and start the server.
  
@@ -23,7 +44,7 @@ Install the dependencies and devDependencies and start the server.
  npm install
 ```
 
-## Configure your .env file
+#### Configure your .env file
 ```sh
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -33,19 +54,19 @@ DB_USERNAME=db_username
 DB_PASSWORD=db_password
 ```
 
-## Final steps
+#### Final steps
 ```sh
 php artisan migrate
 php artisan key:generate
 http://localhost:8000
 ```
 
-## Features
+#### Features
 ```sh
-1.  crud application
+1.  crud generator
 2.  breeze  auth
 
 ```
  
-## Screenshots:
+### Screenshots:
 ![dashboard](https://github.com/amalmm/m-dashboard/blob/main/screenshots/image1.png?raw=true) 
