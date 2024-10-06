@@ -3,10 +3,18 @@
  This project is a simple laravel admin with crud application 
  
 
+## Requirements
+
+```sh
+Laravel >= 10.10
+PHP >= 8.1
+```
+
+
 ## Installation
 
 Install the dependencies and devDependencies and start the server.
-
+ 
 ```sh
  git clone https://github.com/amalmm/m-dashboard.git
  cd  m-dashboard
