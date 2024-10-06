@@ -73,4 +73,5 @@ http://localhost:8000
 ![dashboard](https://github.com/amalmm/m-dashboard/blob/main/screenshots/image1.png?raw=true) 
 
 ## License
+
 MIT
