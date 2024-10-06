@@ -2,7 +2,7 @@
  
  This project is a simple laravel admin with crud application 
 
- ### Usage
+ ## Usage
  ```sh
  php artisan crud:crud {name}
   ```
@@ -25,7 +25,7 @@ list  crud command
 
 
 
-#### Requirements
+## Requirements
 
 ```sh
 Laravel >= 10.10
@@ -33,7 +33,7 @@ PHP >= 8.1
 ```
 
 
-#### Installation
+## Installation
 
 Install the dependencies and devDependencies and start the server.
  
@@ -45,7 +45,7 @@ Install the dependencies and devDependencies and start the server.
  npm install
 ```
 
-#### Configure your .env file
+## Configure your .env file
 ```sh
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -55,14 +55,14 @@ DB_USERNAME=db_username
 DB_PASSWORD=db_password
 ```
 
-#### Final steps
+## Final steps
 ```sh
 php artisan migrate
 php artisan key:generate
 http://localhost:8000
 ```
 
-#### Features
+## Features
 ```sh
 1.  crud generator
 2.  breeze  auth
